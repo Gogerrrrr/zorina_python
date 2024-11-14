@@ -4,7 +4,7 @@ while True:
         n = int(input("Введите число N:"))
         sum = 0
         for i in range(1, n + 1):
-            sum = 1 / i
+            sum += 1 / i
             print("Сумма равна:", sum)
         break
     except ValueError:#возвращение на try
