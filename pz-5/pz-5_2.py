@@ -1,12 +1,12 @@
-def swap(x, y):
-    try:
+def swap(x, y): #функция по перемешке чисел
+    try: #обработка исключений
         x, y = y, x
         return x, y
     except ValueError:
         print("Ошибка, переменые должны быть одинакового типа")
         return x, y
 
-try:
+try: #обработка исключений
     a = int(input("Введите число"))
     b = int(input("Введите число"))
     c = int(input("Введите число"))
