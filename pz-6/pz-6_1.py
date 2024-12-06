@@ -21,5 +21,6 @@ chet_numbers, nechet_numbers = sort_chet_nechet_numbers(numbers)
 print("Четные числа в порядке возрастания: ")
 for number in chet_numbers:
     print(number)
+print("нечетные числа в порядке убывания: ")
 for number in reversed(nechet_numbers):
     print(number)
