@@ -8,15 +8,15 @@ def sort_chet_nechet_numbers(numbers): #сортируем четные и не�
     chet_numbers = []
     nechet_numbers = []
 
-    for number in numbers:
+    for number in numbers:#перебираем числа
         if number % 2 == 0:
             chet_numbers.append(number)
         else:
             nechet_numbers.append(number)
-    return chet_numbers, nechet_numbers
+    return chet_numbers, nechet_numbers#возврат результатов
 
 
-chet_numb, nechet_numb = sort_chet_nechet_numbers(numb)
+chet_numb, nechet_numb = sort_chet_nechet_numbers(numb)#вызов функции с сохранением результатов
 
 print("Четные числа в порядке возрастания: ")
 for number in chet_numb:
