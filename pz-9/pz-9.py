@@ -21,6 +21,6 @@ pogoda["декабрь"] = int(infa[12])
 print(pogoda)
 temperatures = list(pogoda.values())
 min_temperature = min(temperatures)
-print(min_temperature)
 sred_temperature = sum(temperatures) / len(temperatures)
-print(sred_temperature)
+results = {"температуры по месяцам:": pogoda, "минимальная темпераатура:": min_temperature, "средняя температура:": sred_temperature}
+print(results)
