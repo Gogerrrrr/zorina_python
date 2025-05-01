@@ -1,14 +1,27 @@
 #В магазинах имеются следующие товары.
-#Магнит - молоко, соль, сахар. Пятерочка - мясо, молоко, сыр. Перекресток - молоко, творог, сыр, сахар. Определить:
+#Магнит - молоко, соль, сахар. Пятерочка - мясо, молоко, сыр. Перекресток - молоко, творог, сыр, сахар.Определить:
 #1.полный список всех товаров.
 #2.в каких магазинах можно приобрести одновременно молоко и сыр.
 #3.в каких магазинах можно приобрести сахар.
-magazini = {"Магнит": {"молоко", "соль", "сахар"}, "Пятёрочка": {"Мясо", "молоко", "сыр"},"Перекрёсток": {"молоко", "творог", "сыр", "сахар"}}
-all_products = set()
-for products in magazini.values():
-    all_products.update(products)
-print("полный список товаров", all_products)
-milk_and_cheese = [magazini for magazini, all_products in magazini.items() if "молоко" in all_products and "сыр" in all_products]
-print("Магаизны, в которых есть молоко и сыр", milk_and_cheese)
-sugar = [magazini for magazini, all_products in magazini.items() if "сахар" in all_products]
-print("Магазины, в котором есть сахар:", sugar)
+magnit = {"молоко", "соль", "сахар"}
+pyaterochka = {"мясо", "молоко", "сыр"}
+perekrestok = {"молоко", "творог", "сыр", "сахар"}
+print("Полный список товаров:", magnit|pyaterochka|perekrestok)
+
+magazini_s_molokom_i_sirom = set()
+if "молоко" in magnit and "сыр" in magnit:
+    magazini_s_molokom_i_sirom.add("Магнит")
+if "молоко" in pyaterochka and "сыр" in pyaterochka:
+    magazini_s_molokom_i_sirom.add("Пятёрочка")
+if "молоко" in perekrestok and "сыр" in perekrestok:
+    magazini_s_molokom_i_sirom.add("Перекрёсток")
+    print("Магазины с молоком и сыром:", magazini_s_molokom_i_sirom)
+
+magazini_s_saharom = set()
+if "сахар" in magnit:
+    magazini_s_saharom.add("Магнит")
+if "сахар" in pyaterochka:
+    magazini_s_saharom.add("Пятёрочка")
+if "сахар" in perekrestok:
+    magazini_s_saharom.add("Перекрёсток")
+    print("Магазины с сахаром:", magazini_s_saharom)
