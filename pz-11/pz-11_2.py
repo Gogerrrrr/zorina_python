@@ -19,4 +19,4 @@ else:
 
 with open('new_poem.txt', 'w', encoding='utf-8') as file:
     file.write(new_poem)
-print("Новый файл 'new_poem.txt' успешно создан!")
+print("Новый файл 'new_poem.txt' создан")
