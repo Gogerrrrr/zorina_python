@@ -12,10 +12,7 @@ lowercase_letters = sum(1 for char in content if char.islower())
 print(f"Количество букв в нижнем регистре: {lowercase_letters}")
 
 new_stroka = input("Введите новую последнюю строку: ")
-if len(lines) > 0:
-    new_poem = '\n'.join(lines[:-1] + [new_stroka])
-else:
-    new_poem = new_stroka
+new_poem = content.strip('\n') + '\n' + new_stroka
 
 with open('new_poem.txt', 'w', encoding='utf-8') as file:
     file.write(new_poem)
