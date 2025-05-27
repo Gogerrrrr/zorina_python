@@ -1,0 +1,63 @@
+# Определение персонажей игры.
+define e = Character("Тино", color="#228B22")
+define r = Character("Калем", color="#2F4F4F")
+image bg = "bg/bg.jpg"
+
+# Спрайты Тино
+image Tino = "Thino/Tino.png"
+image TinoHappy = "Thino/TinoHappy.png"
+image TinoSad = "Thino/TinoSad.png"
+image TinoCho = "Thino/TinoCho.png"
+image TinoRed = "Thino/TinoRed.png"
+image TinoStar = "Thino/TinoStar.png"
+
+# Игра начинается здесь:
+label start:
+
+    scene bg
+    r '''
+    "В сегодняшний летний день жара ощущается особенно ярко."
+
+    "Наверное, стоило прихватить с собой фляжку с водой."
+
+    "Надеюсь, он надел сегодня шляпу на голову..."
+    "Будет нехорошо, если он потеряет сознание от перегрева..."
+
+    '''
+    show TinoStar
+    with dissolve
+
+
+    hide TinoStar
+
+    show TinoHappy
+    with dissolve
+    e "-- Привет! Ты уже здесь?"
+
+    hide TinoHappy
+    show TinoSad
+    with dissolve
+    e "-- Надеюсь, ты не ждал слишком долго! Прости, что так сильно опоздал!"
+
+    r "Этот очаровательный ушастый мальчишка - мой лучший друг."
+    r "Мы знакомы с самого детства. Он всегда был очень активным и ярким."
+    with dissolve
+    r "-- Всё в порядке, я не долго ждал."
+    with dissolve
+
+    hide TinoSad
+    show TinoHappy
+    with dissolve
+    e "Это хорошо! Куда мы пойдём сегодня?"
+
+    hide TinoHappy
+    show TinoStar
+    with dissolve
+    r '''
+    "Я хотел сводить его на ярмарку в центре города, но видя, какой он довольный, я начинаю сомневаться, что это хорошая идея..."
+
+    "Надеюсь, все пройдёт хорошо..."
+    
+
+
+    return
