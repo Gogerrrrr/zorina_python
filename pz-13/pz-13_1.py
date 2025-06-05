@@ -1,15 +1,20 @@
-#В двумерном списке элементы второго стобца заменить элементами из
+#В двумерном списке элементы второго столбца заменить элементами из
 #одномерного динамического массива соответствующей размерности
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-new_column = [1, 114, 534]
-def replace_second_column(matrix, new_column):
-    return list(map(lambda x, zamena: x[:1] + [zamena] + x[2:], matrix, new_column))
+import random
+rows = 3
+columns = 3
+matrix = []
+for i in range(rows):
+    row = [random.randint(1, 100) for i in range(columns)]
+    matrix.append(row)
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
 
-result = replace_second_column(matrix, new_column)
-print("Результат замены второго столбца:")
-for x in result:
-    print(x)
+new_column = [random.randint(1, 100) for i in range(rows)]
+for i in range(rows):
+    matrix[i][1] = new_column[i]
+
+print("Матрица после замены второго столбца:")
+for row in matrix:
+    print(row)
