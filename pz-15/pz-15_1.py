@@ -130,7 +130,7 @@ try:
                 print("Некорректный ввод!")
 
 
-    if main_menu == "main":
+    if __name__ == "__main__":
         main_menu()
         conn.close()
 
