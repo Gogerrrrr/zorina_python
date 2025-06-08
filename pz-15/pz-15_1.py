@@ -16,7 +16,7 @@ try:
         lectures INT NOT NULL,
         practical INT NOT NULL,
         laboratory INT NOT NULL,
-        froma_otchet VARCHAR(10) NOT NULL
+        forma_otchetnosti VARCHAR(10) NOT NULL
     )
     ''')
     conn.commit()
@@ -30,12 +30,12 @@ try:
         lectures = int(input("Часы лекций: "))
         practical = int(input("Часы практических: "))
         laboratory = int(input("Часы лабораторных: "))
-        froma_otchet = input("Форма отчётности: ")
+        forma_otchetnosti = input("Форма отчётности: ")
 
         cursor.execute('''
         INSERT INTO disciplines 
         VALUES (?, ?, ?, ?, ?, ?, ?)
-        ''', (id_disciplini, name, specialnost, lectures, practical, laboratory, froma_otchet))
+        ''', (id_disciplini, name, specialnost, lectures, practical, laboratory, forma_otchetnosti))
         conn.commit()
         print("Дисциплина успешно добавлена!")
 
@@ -86,14 +86,14 @@ try:
             '3': 'lectures',
             '4': 'practical',
             '5': 'laboratory',
-            '6': 'forma_otchet'
+            '6': 'forma_otchetnosti'
         }
 
         cursor.execute(f'''
-        UPDATE disciplines 
-        SET {fields[field]} = ? 
-        WHERE id_disciplini = ?
-        ''', (new_value, id_disciplini))
+                UPDATE disciplines 
+                SET {fields[field]} = ? 
+                WHERE id_disciplini = ?
+                ''', (new_value, id_disciplini))
         conn.commit()
         print("Данные успешно обновлены!")
 
